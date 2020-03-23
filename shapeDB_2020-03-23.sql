@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.29)
 # Database: shapeDB
-# Generation Time: 2020-03-23 14:13:18 +0000
+# Generation Time: 2020-03-23 16:03:46 +0000
 # ************************************************************
 
 
@@ -26,9 +26,9 @@
 DROP TABLE IF EXISTS `shapes`;
 
 CREATE TABLE `shapes` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` tinyint(4) NOT NULL,
   `ShapeName` varchar(255) DEFAULT NULL,
-  `NumberOfCorners` varchar(255) DEFAULT NULL,
+  `NumberOfCorners` tinyint(4) DEFAULT NULL,
   `AreaFormula` varchar(255) DEFAULT NULL,
   `Comments` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
@@ -39,9 +39,9 @@ LOCK TABLES `shapes` WRITE;
 
 INSERT INTO `shapes` (`ID`, `ShapeName`, `NumberOfCorners`, `AreaFormula`, `Comments`)
 VALUES
-	(1,'Circle','0','2*pi*radius*radius','This is a Circle'),
-	(2,'Rectangle','4','length*width','This is a Rectangle'),
-	(3,'Triangle','3','0.5*height*base','This is a Triangle');
+	(1,'Circle',0,'2*pi*radius*radius','This is a Circle'),
+	(2,'Rectangle',4,'length*width','This is a Rectangle'),
+	(3,'Triangle',3,'0.5*height*base','This is a Triangle');
 
 /*!40000 ALTER TABLE `shapes` ENABLE KEYS */;
 UNLOCK TABLES;
