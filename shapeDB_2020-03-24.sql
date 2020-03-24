@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.29)
 # Database: shapeDB
-# Generation Time: 2020-03-23 16:03:46 +0000
+# Generation Time: 2020-03-24 12:04:54 +0000
 # ************************************************************
 
 
@@ -26,22 +26,23 @@
 DROP TABLE IF EXISTS `shapes`;
 
 CREATE TABLE `shapes` (
-  `ID` tinyint(4) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ShapeName` varchar(255) DEFAULT NULL,
-  `NumberOfCorners` tinyint(4) DEFAULT NULL,
+  `NumberOfCorners` tinyint(1) DEFAULT NULL,
   `AreaFormula` varchar(255) DEFAULT NULL,
   `Comments` varchar(255) DEFAULT NULL,
+  `imgurl` varchar(225) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `shapes` WRITE;
 /*!40000 ALTER TABLE `shapes` DISABLE KEYS */;
 
-INSERT INTO `shapes` (`ID`, `ShapeName`, `NumberOfCorners`, `AreaFormula`, `Comments`)
+INSERT INTO `shapes` (`ID`, `ShapeName`, `NumberOfCorners`, `AreaFormula`, `Comments`, `imgurl`)
 VALUES
-	(1,'Circle',0,'2*pi*radius*radius','This is a Circle'),
-	(2,'Rectangle',4,'length*width','This is a Rectangle'),
-	(3,'Triangle',3,'0.5*height*base','This is a Triangle');
+	(1,'Circle',0,'2*pi*rardius*radius','This is a Circle','https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Circle-withsegments.svg/440px-Circle-withsegments.svg.png'),
+	(2,'Rectangle',4,'length*width','This is a Rectangle','https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Rectangle_Geometry_Vector.svg/440px-Rectangle_Geometry_Vector.svg.png'),
+	(3,'Triangle',3,'0.5*height*base','This is a Triangle','https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Regular_polygon_3_annotated.svg/440px-Regular_polygon_3_annotated.svg.png');
 
 /*!40000 ALTER TABLE `shapes` ENABLE KEYS */;
 UNLOCK TABLES;
