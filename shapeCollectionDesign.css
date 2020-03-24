@@ -8,18 +8,19 @@ body {
 }
 
 header {
-    background-color : #ff413a;
+    background-color: #ff413a;
     padding: 30px;
     text-align: center;
     font-size: 35px;
 }
 
 section {
-    width : 80%;
-    margin : 0 auto;
+    width: 80%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    font-size: 2rem;
 }
 
 img {
@@ -29,16 +30,17 @@ img {
 
 .shape {
     display: flex;
+    flex-grow: 1;
     align-content: flex-end;
-    border-radius: 5%;
     background-color: #ff8a00;
     text-align: center;
-    margin : 20px;
+    margin: 20px;
 }
 .datacontainer {
-    display : flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 20px;
 }
 
 @media (max-width: 600px) {
@@ -46,7 +48,6 @@ img {
         display: flex;
         align-content: flex-end;
         flex-direction: column;
-        border-radius: 5%;
         background-color: #ff8a00;
         text-align: center;
         margin : 20px;
