@@ -30,8 +30,8 @@ img {
 
 .shape {
     display: flex;
+    flex-grow: 1;
     align-content: flex-end;
-    border-radius: 5%;
     background-color: #ff8a00;
     text-align: center;
     margin : 20px;
@@ -48,7 +48,6 @@ img {
         display: flex;
         align-content: flex-end;
         flex-direction: column;
-        border-radius: 5%;
         background-color: #ff8a00;
         text-align: center;
         margin : 20px;
