@@ -14,6 +14,9 @@ $shapes = $query->fetchAll();
 <html>
     <head>
         <title>Collection of Shapes</title>
+        <link rel="stylesheet" type="text/css" href="normalize.css">
+        <link rel="stylesheet" type="text/css" href="shapeCollectionDesign.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <header>
@@ -23,10 +26,18 @@ $shapes = $query->fetchAll();
             <section class ="shapeContainer">
                 <?php foreach ($shapes as $shape) { ?>
                     <div class="shape">
-                        <img alt="<?php echo $shape["ShapeName"] ?> Artwork" src="<?php echo $shape["imgurl"] ?>" />
-                        <h3>
-                            Number of corners -<?php echo $shape["NumberOfCorners"].'<br>'; ?> The area formula - <?php echo $shape["AreaFormula"]; ?>
-                        </h3>
+                        <div class="imgcontainer">
+                        <img alt="<?php echo $shape["ShapeName"] ?>" src="<?php echo $shape["imgurl"] ?>" />
+                        </div>
+                        <div class="datacontainer">
+                            <h2>
+                                <?php echo $shape["ShapeName"] ?>
+                            </h2>
+                            <h3>
+                                Number of corners :- <?php echo $shape["NumberOfCorners"]; ?>
+                            </h3>
+                            The area formula :- <?php echo $shape["AreaFormula"]; ?>
+                        </div>
                     </div>
                 <?php } ?>
             </section>
