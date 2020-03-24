@@ -4,7 +4,6 @@ require_once ('../getFunctions.php');
 
 use PHPUnit\Framework\TestCase;
 
-
 class dataCollectionAppTest extends TestCase {
 
     public function testgetNameImg() {

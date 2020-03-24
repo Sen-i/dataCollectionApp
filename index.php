@@ -1,4 +1,5 @@
 <?php
+
 require_once "config.php";
 require_once "./getFunctions.php";
 
@@ -17,7 +18,9 @@ $shapes = getFromDatabase($db);
     </head>
     <body>
         <header>
-            <h1>Collection of shapes</h1>
+            <h1>
+                Collection of shapes
+            </h1>
         </header>
         <main>
             <section class ="shapeContainer">
