@@ -1,13 +1,10 @@
 <?php
 require_once "config.php";
-$query = $db->prepare("SELECT * FROM `shapes`");
-$query->execute();
-$shapes = $query->fetchAll();
+require_once "./getFunctions.php";
 
-//foreach ($shapes as $row)
-//{
-//    echo "id: " . $row["ID"]. " - Shape Name: " . $row["ShapeName"]. " " . $row["NumberOfCorners"]. " " . $row["AreaFormula"] . " " . $row["Comments"]."<br>";
-//};
+$db = connectDB();
+$shapes = getFromDatabase($db);
+
 ?>
 
 <!DOCTYPE html>
@@ -27,16 +24,16 @@ $shapes = $query->fetchAll();
                 <?php foreach ($shapes as $shape) { ?>
                     <div class="shape">
                         <div class="imgcontainer">
-                        <img alt="<?php echo $shape["ShapeName"] ?>" src="<?php echo $shape["imgurl"] ?>" />
+                            <?php echo getNameImg($shape); ?>
                         </div>
                         <div class="datacontainer">
                             <h2>
-                                <?php echo $shape["ShapeName"] ?>
+                                <?php echo getShapeName($shape); ?>
                             </h2>
                             <h3>
-                                Number of corners :- <?php echo $shape["NumberOfCorners"]; ?>
+                                Number of corners :- <?php echo getNumberOfCorners($shape); ?>
                             </h3>
-                            The area formula :- <?php echo $shape["AreaFormula"]; ?>
+                            The area formula :- <?php echo getFormula($shape); ?>
                         </div>
                     </div>
                 <?php } ?>
