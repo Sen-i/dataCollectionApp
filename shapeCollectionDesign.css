@@ -24,14 +24,14 @@ section {
 }
 
 img {
-    min-width: 100%;
-    height: auto;
+    width: 400px;
+    height: 200px;
 }
 
 .shape {
     display: flex;
     flex-grow: 1;
-    align-content: flex-end;
+    justify-content: center;
     background-color: #ff8a00;
     text-align: center;
     margin: 20px;
@@ -46,7 +46,7 @@ img {
 @media (max-width: 600px) {
     .shape {
         display: flex;
-        align-content: flex-end;
+        justify-content: center;
         flex-direction: column;
         background-color: #ff8a00;
         text-align: center;

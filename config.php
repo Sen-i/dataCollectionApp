@@ -1,8 +1,5 @@
 <?php
 
-//$db = new PDO('mysql:host=DB;dbname=shapeDB','root','password');
-//$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
-
 /**
  * @return PDO A database instance
  */
@@ -20,8 +17,8 @@ function connectDB(): PDO {
  * @return array The shapes in the database.
  */
 
-function getFromDatabase(PDO $database): array {
-    $query = $database->prepare("SELECT * FROM `shapes`");
+function getShapes(PDO $database): array {
+    $query = $database->prepare("SELECT `ID`, `ShapeName`, `NumberOfCorners`, `AreaFormula`, `Comments`,`imgurl` FROM `shapes`");
     $query->execute();
     return $query->fetchAll();
 }
