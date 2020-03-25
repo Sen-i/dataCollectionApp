@@ -25,17 +25,18 @@ section {
 
 img {
     width: 400px;
-    height: 200px;
+    height: 400px;
 }
 
 .shape {
     display: flex;
     flex-grow: 1;
-    justify-content: center;
+    justify-content: space-around;
     background-color: #ff8a00;
     text-align: center;
     margin: 20px;
 }
+
 .datacontainer {
     display: flex;
     flex-direction: column;
@@ -43,9 +44,20 @@ img {
     padding: 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
+    .datacontainer {
+        background-color: #ff8a00;
+        border-radius: 27% 27% 0 0;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+    }
+
     .shape {
         display: flex;
+        border-radius: 50%;
         justify-content: center;
         flex-direction: column;
         background-color: #ff8a00;
