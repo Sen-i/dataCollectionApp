@@ -1,10 +1,10 @@
 <?php
 
 require_once "config.php";
-require_once "./getFunctions.php";
+require_once "getFunctions.php";
 
 $db = connectDB();
-$shapes = getFromDatabase($db);
+$shapes = getShapes($db);
 
 ?>
 
@@ -31,12 +31,12 @@ $shapes = getFromDatabase($db);
                         </div>
                         <div class="datacontainer">
                             <h2>
-                                <?php echo getShapeName($shape); ?>
+                                <?php echo $shape["ShapeName"]; ?>
                             </h2>
                             <h3>
-                                Number of corners :- <?php echo getNumberOfCorners($shape); ?>
+                                Number of corners :- <?php echo $shape["NumberOfCorners"]; ?>
                             </h3>
-                            The area formula :- <?php echo getFormula($shape); ?>
+                            The area formula :- <?php echo $shape["AreaFormula"] ?>
                         </div>
                     </div>
                 <?php } ?>
